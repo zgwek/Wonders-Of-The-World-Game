@@ -1,0 +1,7 @@
+const cards = [
+{
+    name: '',
+    img:
+}
+
+]
