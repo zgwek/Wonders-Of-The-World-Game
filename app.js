@@ -105,7 +105,7 @@ function checkMatch(){
     scoreDisplay.innerHTML = matchedCards.length
     selectedCards = []
     matchedCardId = []
-    if (matchedCards.lenght == cards.length/2){
+    if (matchedCards.length == cards.length/2){
         scoreDisplay.innerHTML = 'You WON'
     }
 }
@@ -118,6 +118,8 @@ function flip(){
     //console.log('clicked',cardId)
     //console.log(selectedCard)
     this.setAttribute('src',cards[cardId].img)
-    if (selectedCards.length === 2)
-    setTimeout(checkMatch,500)
+    if (selectedCards.length === 2){
+    setTimeout(checkMatch,100)
+    }
+    
 }
