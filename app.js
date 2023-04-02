@@ -105,8 +105,12 @@ function checkMatch(){
     scoreDisplay.innerHTML = matchedCards.length
     selectedCards = []
     matchedCardId = []
+    //matchedCards.length = 7;
     if (matchedCards.length == cards.length/2){
         scoreDisplay.innerHTML = 'You WON'
+        cardDisplay.replaceChildren();
+        newGame()
+
     }
 }
 
@@ -123,3 +127,16 @@ function flip(){
     }
     
 }
+
+function newGameButton() {
+    const newButton = document.createElement("button");
+    const newContent = document.createTextNode("Play Again?");
+    newButton.appendChild(newContent);
+    const currentDiv = document.getElementById("playAgain");
+    document.body.insertBefore(playAgain, currentDiv);
+    createBoard()
+  }
+
+  function newGame (){
+
+  }
