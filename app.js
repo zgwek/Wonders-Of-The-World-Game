@@ -65,7 +65,7 @@ const cardDisplay = document.querySelector('#grid')
 const scoreDisplay = document.querySelector('#result')
 let selectedCards = []
 let matchedCardId = []
-const matchedCards = []
+let matchedCards = []
 
 console.log(cardDisplay)
 
@@ -105,11 +105,11 @@ function checkMatch(){
     scoreDisplay.innerHTML = matchedCards.length
     selectedCards = []
     matchedCardId = []
-    //matchedCards.length = 7;
+    matchedCards.length = 7;
     if (matchedCards.length == cards.length/2){
         scoreDisplay.innerHTML = 'You WON'
         cardDisplay.replaceChildren();
-        newGame()
+        newGameButton()
 
     }
 }
@@ -129,14 +129,17 @@ function flip(){
 }
 
 function newGameButton() {
-    const newButton = document.createElement("button");
-    const newContent = document.createTextNode("Play Again?");
-    newButton.appendChild(newContent);
-    const currentDiv = document.getElementById("playAgain");
-    document.body.insertBefore(playAgain, currentDiv);
-    createBoard()
+    const newButton = document.createElement("button")
+    const newContent = document.createTextNode("Play Again?")
+    newButton.appendChild(newContent)
+    document.body.appendChild(newButton)
+    newButton.addEventListener('click',() => {    
+        newGame()
+        newButton.remove()  
+   });
   }
 
-  function newGame (){
-
+  function newGame(){
+    createBoard()
+    matchedCards = []
   }
