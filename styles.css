@@ -1,12 +1,13 @@
 body{
     background-color: rgb(228, 246, 222);
-   
+    text-align: center;
 }
 #grid{
     width: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-self: center;
+    text-align: center;
     margin-top: 0%;
 }
 img{ 
@@ -26,8 +27,7 @@ h4{
     
 }
 #tryAgain{
-    display: flex;
-    justify-content: center;
+    font-size: 2rem;
     color: rgb(57, 165, 139);
 }
 div{
