@@ -130,6 +130,7 @@ function flip(){
 
 function newGameButton() {
     const newButton = document.createElement("button")
+    newButton.setAttribute("id", "tryAgain");
     const newContent = document.createTextNode("Play Again?")
     newButton.appendChild(newContent)
     document.body.appendChild(newButton)
