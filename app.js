@@ -41,7 +41,7 @@ const cards = [
 },
 {
     name: 'Great-Wall',
-    img:'images/Great-Wall.pngg',
+    img:'images/Great-Wall.png',
 },
 {
     name: 'Machu-Picchu',
@@ -62,8 +62,10 @@ const cards = [
 cards.sort( () => 0.5 - Math.random())
 
 const cardDisplay = document.querySelector('#grid')
-const selectedCard = []
-const matchedCardId = []
+const scoreDisplay = document.querySelector('#result')
+let selectedCards = []
+let matchedCardId = []
+const matchedCards = []
 
 console.log(cardDisplay)
 
@@ -86,20 +88,36 @@ createBoard()
 function checkMatch(){
     const cards = document.querySelectorAll('#grid img')
     console.log("check")
-    if (selectedCard[0] == selectedCard[1]){
+    const firstPickId = matchedCardId[0];
+    const secondPickId = matchedCardId[1];
+    if (selectedCards[0] == selectedCards[1]){
     alert('Match!')
-    //cards[]
+    //cards[firstPickId].setAttribute('src','images/blank.png')
+    //cards[secondPickId].setAttribute('src','images/blank.png')
+    cards[firstPickId].removeEventListener('click',flip)
+    cards[secondPickId].removeEventListener('click',flip)
+    matchedCards.push(selectedCards)
+    } else {
+        cards[firstPickId].setAttribute('src','images/card-design.png')
+        cards[secondPickId].setAttribute('src','images/card-design.png')
+        alert('sorry, try again')
+    }
+    scoreDisplay.innerHTML = matchedCards.length
+    selectedCards = []
+    matchedCardId = []
+    if (matchedCards.lenght == cards.length/2){
+        scoreDisplay.innerHTML = 'You WON'
     }
 }
 
 function flip(){
     const cardId = this.getAttribute('data-id')
-    selectedCard.push(cards[cardId].name)
+    selectedCards.push(cards[cardId].name)
     matchedCardId.push(cardId)
     console.log(matchedCardId)
     //console.log('clicked',cardId)
     //console.log(selectedCard)
     this.setAttribute('src',cards[cardId].img)
-    if (selectedCard.length === 2)
-    setTimeout(checkMatch,10000)
+    if (selectedCards.length === 2)
+    setTimeout(checkMatch,500)
 }
