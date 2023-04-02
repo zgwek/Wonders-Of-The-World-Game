@@ -29,31 +29,31 @@ const cards = [
 },
 {
     name: 'Chichen-Itza',
-    img:'images/Chichen-Itza.png',
+    img:'images/Chichen-Fact.png',
 },
 {
     name: 'Christ-Redeemer',
-    img:'images/Christ-Redeemer.png',
+    img:'images/Christ-Fact.png',
 },
 {
     name: 'Colosseum',
-    img:'images/Colosseum.png',
+    img:'images/Col-Fact.png',
 },
 {
     name: 'Great-Wall',
-    img:'images/Great-Wall.png',
+    img:'images/China-Fact.png',
 },
 {
     name: 'Machu-Picchu',
-    img:'images/Machu-Picchu.png',
+    img:'images/Machu-Fact.png',
 },
 {
     name: 'Petra',
-    img:'images/Petra.png',
+    img:'images/Petra-Fact.png',
 },
 {
     name: 'Taj-Mahal',
-    img:'images/Taj-Mahal.png',
+    img:'images/Taj-Fact.png',
 },
 
 
