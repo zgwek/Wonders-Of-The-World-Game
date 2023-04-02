@@ -105,12 +105,11 @@ function checkMatch(){
     scoreDisplay.innerHTML = matchedCards.length
     selectedCards = []
     matchedCardId = []
-    matchedCards.length = 7;
+    //matchedCards.length = 7;
     if (matchedCards.length == cards.length/2){
         scoreDisplay.innerHTML = 'You WON'
         cardDisplay.replaceChildren();
         newGameButton()
-
     }
 }
 
@@ -141,6 +140,7 @@ function newGameButton() {
   }
 
   function newGame(){
+    scoreDisplay.innerHTML = ''
     createBoard()
     matchedCards = []
   }
